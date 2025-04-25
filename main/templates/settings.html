@@ -1,0 +1,115 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" id="rtl-link" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+    <!-- iconsax icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a onclick="history.back();">
+                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                </a>
+                <h3>Setting</h3>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- settings page start -->
+    <section class="section-sm-t-space section-b-space">
+        <div class="custom-container">
+            <ul class="setting-listing">
+                <li>
+                    <a href="notification-setting.html" class="account-link">
+                        <h5>Notification Settings</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="password-manager.html" class="account-link">
+                        <h5>Password Manager</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#delate" data-bs-toggle="offcanvas" class="account-link">
+                        <h5>Delete Account</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- settings page end -->
+
+    <!-- logout offcanvas start -->
+    <div class="offcanvas offcanvas-bottom success-offcanvas" tabindex="-1" id="delate">
+        <div class="offcanvas-header pt-0 px-0">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Delete Account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body text-center p-0 pt-3 pb-4">
+            <h5 class="fw-medium title-color">Are you sure want to delete this app?</h5>
+        </div>
+        <div class="offcanvas-foorter d-flex align-items-center gap-3 shadow-none">
+            <a href="settings.html" class="btn white-btn w-50">Cancel</a>
+            <a href="login.html" class="btn theme-btn w-50">Delate</a>
+        </div>
+    </div>
+    <!-- logout offcanvas end -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax icon -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" id="rtl-link" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+    <!-- iconsax icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a href="forgot-password.html">
+                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- otp section starts -->
+    <section class="section-sm-t-space section-b-space">
+        <div class="custom-container">
+            <div class="auth-content">
+                <h1 class="title-color">OTP Verification</h1>
+                <h5 class="fw-normal content-color mt-2">Please enter 4-digit code sent to you at
+                    *******@gmail.com
+                </h5>
+            </div>
+            <form class="otp-form">
+                <div class="form-group">
+                    <div class="form-input">
+                        <input type="number" class="form-control active" placeholder="0" id="five1" onkeyup="onKeyUpEvent(1, event)" onfocus="onFocusEvent(1)">
+                    </div>
+                    <div class="form-input">
+                        <input type="number" class="form-control" placeholder="0" id="five2" onkeyup="onKeyUpEvent(2, event)" onfocus="onFocusEvent(2)">
+                    </div>
+                    <div class="form-input">
+                        <input type="number" class="form-control" placeholder="0" id="five3" onkeyup="onKeyUpEvent(3, event)" onfocus="onFocusEvent(3)">
+                    </div>
+                    <div class="form-input">
+                        <input type="number" class="form-control" placeholder="0" id="five4" onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)">
+                    </div>
+                </div>
+            </form>
+
+            <a href="reset-password.html" class="btn theme-btn w-100 auth-btn">Verify</a>
+
+            <h5 class="content-color fw-normal text-center mt-24"> Did not receive
+                otp? Check your spam filter,
+                or <a href="forgot-password.html" class="theme-color">try another email address</a>
+            </h5>
+
+        </div>
+    </section>
+    <!-- otp section ends -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax icon -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- otp js -->
+    <script src="{% static '' %}main/assets/js/otp.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>

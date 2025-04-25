@@ -1,0 +1,318 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" id="rtl-link" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+    <!-- iconsax icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header profile-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a href="#sidebar" class="sidebar-btn" data-bs-toggle="offcanvas">
+                    <i class="iconsax" data-icon="text-align-left"></i>
+                </a>
+                <h3>Profile</h3>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- profile section starts -->
+    <section class="light-theme-bg">
+        <div class="profile-background">
+            <div class="profile-part">
+                <div class="profile-image">
+                    <img id="output" class="img-fluid profile-pic" src="{% static '' %}main/assets/images/avatar/1.png" alt="11">
+                    <i class="iconsax edit-icon" data-icon="camera"></i>
+                    <input id="file" type="file" onchange="loadFile(event)">
+                </div>
+                <h3>Smitha Williams</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-0">
+        <div class="profile-wrapper">
+            <ul class="profile-listing">
+                <li>
+                    <a href="order.html">
+                        <div class="profile-box color-1">
+                            <img class="img-fluid icon" src="{% static '' %}main/assets/images/svg/box.svg" alt="box">
+                        </div>
+                        <h5>Order</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="voucher.html">
+                        <div class="profile-box color-2">
+                            <img class="img-fluid icon" src="{% static '' %}main/assets/images/svg/coupon.svg" alt="coupon">
+                        </div>
+                        <h5>Voucher</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="reviews.html">
+                        <div class="profile-box color-3">
+                            <img class="img-fluid icon" src="{% static '' %}main/assets/images/svg/review.svg" alt="review">
+                        </div>
+                        <h5>Review</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="help.html">
+                        <div class="profile-box color-4">
+                            <img class="img-fluid icon" src="{% static '' %}main/assets/images/svg/help.svg" alt="help">
+                        </div>
+                        <h5>Help</h5>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="account-listing">
+                <li>
+                    <a href="edit-profile.html" class="account-link">
+                        <h5>Edit your profile</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="manage-address.html" class="account-link">
+                        <h5>Manage Address</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="payment-method.html" class="account-link">
+                        <h5>Payment Methods</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html" class="account-link">
+                        <h5>Settings</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="privacy-policy.html" class="account-link">
+                        <h5>Privacy Policy</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#logout" data-bs-toggle="offcanvas" class="account-link">
+                        <h5>Logout</h5>
+                        <i class="iconsax icon" data-icon="chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- profile section ends -->
+
+    <!-- logout offcanvas start -->
+    <div class="offcanvas offcanvas-bottom success-offcanvas" tabindex="-1" id="logout">
+        <div class="offcanvas-header pt-0 px-0">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Logout</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body text-center p-0 pt-3 pb-4">
+            <h5 class="fw-medium title-color">Are you sure you want to log out?</h5>
+        </div>
+        <div class="offcanvas-foorter d-flex align-items-center gap-3 shadow-none">
+            <a href="account.html" class="btn white-btn w-50">Cancel</a>
+            <a href="login.html" class="btn theme-btn w-50">Logout</a>
+        </div>
+    </div>
+    <!-- logout offcanvas end -->
+
+    <!-- bottom panel start -->
+    <ul class="bottom-menu">
+        <li>
+            <a href="home.html">
+                <i class="iconsax text-content" data-icon="home-2"></i>
+                <h6>Home</h6>
+            </a>
+        </li>
+
+        <li>
+            <a href="category.html">
+                <i class="iconsax text-content" data-icon="grid-apps"></i>
+                <h6>Category</h6>
+            </a>
+        </li>
+
+        <li>
+            <a href="cart.html">
+                <i class="iconsax text-content" data-icon="shopping-cart"></i>
+                <h6>Cart</h6>
+            </a>
+        </li>
+
+        <li>
+            <a href="wishlist.html">
+                <i class="iconsax text-content" data-icon="heart"></i>
+                <h6>Wishlist</h6>
+            </a>
+        </li>
+
+        <li>
+            <a href="account.html" class="active">
+                <i class="iconsax text-content" data-icon="user-2"></i>
+                <h6>Profile</h6>
+            </a>
+        </li>
+    </ul>
+    <!-- bottom panel end -->
+
+    <!-- sidebar starts -->
+    <div class="offcanvas sidebar-offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header sidebar-header">
+            <div class="sidebar-logo">
+                <img class="img-fluid logo" src="{% static '' %}main/assets/images/logo/logo.png" alt="logo">
+            </div>
+        </div>
+        <div class="offcanvas-body">
+            <a href="edit-profile.html" class="profile-part">
+                <img class="img-fluid profile-pic" src="{% static '' %}main/assets/images/avatar/1.png" alt="p8">
+                <div>
+                    <h3>Smitha Williams</h3>
+                    <span>Edit Account</span>
+                </div>
+            </a>
+            <ul class="link-section switch-section">
+                <li>
+                    <a href="home.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="home-2"></i>
+                        <h3>Home</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="category.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="grid-apps"></i>
+                        <h3>Category</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="shopping-cart"></i>
+
+                        <h3>Cart</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="wishlist.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="heart"></i>
+                        <h3>Wishlist</h3>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="account.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="user-2"></i>
+                        <h3>Profile</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="page-listing.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="book-closed"> </i>
+                        <h3>Template Pages</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="elements-page.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="document-text-1"> </i>
+                        <h3> Template Elements</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <div class="pages">
+                        <i class="iconsax sidebar-icon" data-icon="repeat"> </i>
+                        <h3>RTL</h3>
+                    </div>
+                    <div class="switch-btn">
+                        <input id="dir-switch" type="checkbox">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pages">
+                        <i class="iconsax sidebar-icon" data-icon="brush-3"> </i>
+                        <h3>Dark</h3>
+                    </div>
+                    <div class="switch-btn">
+                        <input id="dark-switch" type="checkbox">
+                    </div>
+                </li>
+
+            </ul>
+
+            <div class="bottom-sidebar">
+                <a href="login.html" class="pages">
+                    <i class="iconsax sidebar-icon" data-icon="logout-2"> </i>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- sidebar end -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax icon -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- image change js -->
+    <script src="{% static '' %}main/assets/js/image-change.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>

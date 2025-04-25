@@ -1,0 +1,243 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" id="rtl-link" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+    <!-- iconsax icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a onclick="history.back();">
+                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                </a>
+                <h3>Page Listing</h3>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- page listing start -->
+    <section class="section-b-space">
+        <div class="custom-container">
+            <div class="element-title mt-0">
+                <h3>Onboarding & Authentication Pages</h3>
+            </div>
+
+            <div class="element-menu">
+                <ul class="navigation">
+                    <li class="pages">
+                        <a href="index.html">Splash Screen<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="languages.html">Languages<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="login.html">Login<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="signup.html">Sign Up <i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="otp.html">Otp<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="forgot-password.html">Forgot Password <i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="reset-password.html">Reset Password <i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="password-successfully.html">Password Successfully<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="element-title">
+                <h3>Main Pages</h3>
+            </div>
+            <div class="element-menu">
+                <ul class="navigation">
+                    <li class="pages">
+                        <a href="home.html">Home Page<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="notification.html">Notification <i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="category.html">Categories<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="search.html">Search<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="location.html">Location<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="deals.html"> Offer Page<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="sale.html"> Flash Sale<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="cart.html"> cart<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="wishlist.html"> Wishlist<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="shop.html">Shop Page<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="product-details.html">Product Details Page<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="order.html"> Order<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="order-tracking.html"> Order Tracking<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="reviews.html"> Reviews <i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="voucher.html"> Coupon<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="payment.html"> Payment<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="checkout.html"> Checkout Page<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="help.html">Help Center<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="element-title">
+                <h3>Profile, Settings Pages</h3>
+            </div>
+
+            <div class="element-menu">
+                <ul class="navigation">
+                    <li class="pages">
+                        <a href="account.html">Account<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="edit-profile.html">Edit Profile<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="settings.html">App Setting<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="notification-setting.html">Notification Setting <i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="password-manager.html">Password Manager<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="manage-address.html"> My Address<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="payment-method.html">Payment Method<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="add-card.html">Add Card<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="privacy-policy.html">Privacy Policy<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="element-title">
+                <h3>Other Pages</h3>
+            </div>
+
+            <div class="element-menu">
+                <ul class="navigation">
+                    <li class="pages">
+                        <a href="empty-notification.html">Empty Notification<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="empty-wishlist.html">Empty Location<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="empty-search.html">Empty Search<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+
+                    <li class="pages">
+                        <a href="empty-cart.html">Empty Cart<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                    <li class="pages">
+                        <a href="no-connection.html">No Connection<i class="iconsax" data-icon="chevron-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page listing start -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax icon -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>

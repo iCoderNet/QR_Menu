@@ -1,0 +1,170 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" id="rtl-link" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+    <!-- swiper css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/swiper-bundle.min.css">
+
+    <!-- iconsax icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a onclick="history.back();">
+                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                </a>
+
+                <h3>New York, USA</h3>
+
+                <a href="#location" class="icon-box" data-bs-toggle="offcanvas">
+                    <i class="iconsax icon-btn icon-theme-color" data-icon="gps"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- location section starts -->
+    <section class="pt-0">
+        <div class="custom-container">
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d72304.78810314502!2d-73.93730011693798!3d40.674388864516885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1728463823740!5m2!1sen!2sin" width="100%" height="100%" class="radius-20" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- location section end -->
+
+    <!-- location offcanvas starts -->
+    <div class="offcanvas offcanvas-bottom filter-offcanvas" tabindex="-1" id="location">
+        <div class="offcanvas-header">
+            <h3>Select Location</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="theme-form search-form  p-0 d-flex align-content-center gap-2">
+                <div class="form-group w-100">
+                    <div class="form-input">
+                        <input type="search" class="form-control search " id="inputusername" placeholder="Search here.....">
+                        <i class="iconsax search-icon" data-icon="search-normal-2"> </i>
+                        <i class="iconsax mic-icon" data-icon="mic-2"> </i>
+                    </div>
+                </div>
+            </form>
+
+            <ul class="location-list mt-3">
+                <li class="active">
+                    <img class="img-fluid location-icon" src="{% static '' %}main/assets/images/svg/location.svg" alt="">
+                    <h5>New York City, New York</h5>
+                </li>
+
+                <li>
+                    <img class="img-fluid location-icon" src="{% static '' %}main/assets/images/svg/location.svg" alt="">
+                    <h5>Los Angeles, California</h5>
+                </li>
+
+                <li>
+                    <img class="img-fluid location-icon" src="{% static '' %}main/assets/images/svg/location.svg" alt="">
+                    <h5>Chicago, Illinois</h5>
+                </li>
+            </ul>
+        </div>
+
+        <div class="offcanvas-foorter shadow-none mt-3">
+            <a href="location.html" class="btn theme-btn w-100">Select</a>
+        </div>
+    </div>
+    <!-- location offcanvas end -->
+
+
+    <!-- search section starts -->
+    <!-- <section class="section-sm-t-space">
+        <div class="custom-container">
+            <form class="theme-form search-form  p-0 d-flex align-content-center gap-2">
+                <div class="form-group w-100">
+                    <div class="form-input">
+                        <input type="search" class="form-control search " id="inputusername"
+                            placeholder="Search here.....">
+                        <i class="iconsax search-icon" data-icon="search-normal-2"> </i>
+                        <i class="iconsax mic-icon" data-icon="mic-2"> </i>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section> -->
+    <!-- search section end -->
+
+    <!-- location list section starts -->
+    <!-- <section class="section-b-space">
+        <div class="custom-container">
+            <ul class="location-list">
+                <li class="active">
+                    <img class="img-fluid location-icon" src="{% static '' %}main/assets/images/svg/location.svg" alt="">
+                    <h5>New York City, New York</h5>
+                </li>
+
+                <li>
+                    <img class="img-fluid location-icon" src="{% static '' %}main/assets/images/svg/location.svg" alt="">
+                    <h5>Los Angeles, California</h5>
+                </li>
+
+                <li>
+                    <img class="img-fluid location-icon" src="{% static '' %}main/assets/images/svg/location.svg" alt="">
+                    <h5>Chicago, Illinois</h5>
+                </li>
+            </ul>
+        </div>
+    </section> -->
+    <!-- location list section end -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax icon -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>

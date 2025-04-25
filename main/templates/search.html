@@ -1,0 +1,530 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" id="rtl-link" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+    <!-- iconsax icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a onclick="history.back();">
+                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                </a>
+                <h3>Search</h3>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- search section starts -->
+    <section class="section-sm-t-space">
+        <div class="custom-container">
+            <form class="theme-form search-form  p-0 d-flex align-content-center gap-2">
+                <div class="form-group ">
+                    <div class="form-input">
+                        <input type="search" class="form-control search with-filter" id="inputusername" placeholder="Search here.....">
+                        <i class="iconsax search-icon" data-icon="search-normal-2"> </i>
+                        <i class="iconsax mic-icon" data-icon="mic-2"> </i>
+                    </div>
+                </div>
+                <a href="#filter" data-bs-toggle="modal">
+                    <i class="iconsax filter-btn" data-icon="setting-3"></i>
+                </a>
+            </form>
+        </div>
+    </section>
+    <!-- search section end -->
+
+    <!-- recent Search section start -->
+    <section>
+        <div class="custom-container">
+            <div class="title">
+                <h3>Recent Search</h3>
+            </div>
+
+            <ul class="search-list">
+                <li class="search-box">
+                    <i class="iconsax icon" data-icon="add"></i>
+                    <h6>Smart Phone</h6>
+                </li>
+                <li class="search-box">
+                    <i class="iconsax icon" data-icon="add"></i>
+                    <h6>Smart Watch</h6>
+                </li>
+                <li class="search-box">
+                    <i class="iconsax icon" data-icon="add"></i>
+                    <h6>Bluetooth Speaker</h6>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- recent Search section end -->
+
+    <!-- search product section start -->
+    <section class="section-b-space">
+        <div class="custom-container">
+            <div class="title">
+                <h3>Recently Viewed</h3>
+            </div>
+            <div class="row g-3">
+                <div class="col-6">
+                    <div class="product-box">
+                        <div class="product-img">
+                            <div class="badge-img">
+                                <span> Sale</span>
+                            </div>
+                            <img src="{% static '' %}main/assets/images/product/1.png" class="img-fluid img" alt="">
+                            <div class="like-icon animate ">
+                                <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
+                                <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
+                                <div class="effect-group">
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <a href="cart.html" class="add-icon">
+                                <i class="iconsax" data-icon="add"></i>
+                            </a>
+                            <h6 class="content-color white-nowrap">Mobile</h6>
+                            <a href="product-details.html">
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Latest Smart Mobile Phone</h5>
+                            </a>
+                            <ul class="rating-list">
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                </li>
+                            </ul>
+                            <div class="bottom-content">
+                                <h5 class="price">$322.51 <del>$350.45</del></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="product-box">
+                        <div class="product-img">
+                            <img src="{% static '' %}main/assets/images/product/2.png" class="img-fluid img" alt="">
+                            <div class="like-icon animate active inactive">
+                                <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
+                                <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
+                                <div class="effect-group">
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-content">
+                            <a href="cart.html" class="add-icon">
+                                <i class="iconsax" data-icon="add"></i>
+                            </a>
+
+                            <a href="product-details.html">
+                                <h6 class="content-color white-nowrap">Speaker</h6>
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Wireless Audio System</h5>
+                            </a>
+                            <ul class="rating-list">
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                </li>
+                            </ul>
+                            <div class="bottom-content">
+                                <h5 class="price">$120.30 <del>$150.12</del></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="product-box">
+                        <div class="product-img">
+                            <img src="{% static '' %}main/assets/images/product/3.png" class="img-fluid img" alt="">
+                            <div class="like-icon animate ">
+                                <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
+                                <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
+                                <div class="effect-group">
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <a href="cart.html" class="add-icon">
+                                <i class="iconsax" data-icon="add"></i>
+                            </a>
+                            <h6 class="content-color white-nowrap">Laptop</h6>
+                            <a href="product-details.html">
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Latest Smart laptop</h5>
+                            </a>
+                            <ul class="rating-list">
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                            </ul>
+                            <div class="bottom-content">
+                                <h5 class="price">$550 <del>$845</del></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="product-box">
+                        <div class="product-img">
+                            <div class="badge-img">
+                                <span> Sale</span>
+                            </div>
+                            <img src="{% static '' %}main/assets/images/product/4.png" class="img-fluid img" alt="">
+                            <div class="like-icon animate active inactive">
+                                <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
+                                <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
+                                <div class="effect-group">
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-content">
+                            <a href="cart.html" class="add-icon">
+                                <i class="iconsax" data-icon="add"></i>
+                            </a>
+
+                            <a href="product-details.html">
+                                <h6 class="content-color white-nowrap">Headphone</h6>
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Wireless Bluetooth Headphone</h5>
+                            </a>
+                            <ul class="rating-list">
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                </li>
+                                <li>
+                                    <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                </li>
+                            </ul>
+                            <div class="bottom-content">
+                                <h5 class="price">$45.65 <del>$50.55</del></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- flash sale section start -->
+
+    <!-- Filter modal start -->
+    <div class="modal fade filter-modal" tabindex="-1" id="filter">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Filter by</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="theme-form pb-70">
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <select class="form-select bg-box-bg">
+                                <option selected="" disabled="">Select Category</option>
+                                <option value="1">Mobile</option>
+                                <option value="2">Laptop</option>
+                                <option value="3">Tablet</option>
+                                <option value="4">Headphone</option>
+                                <option value="5">Camera</option>
+                                <option value="6">Watch</option>
+                                <option value="7">Speaker</option>
+                                <option value="8">Fragrance</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Brand</label>
+                            <div class="custom-filter-checkbox custom-scrollbar">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Divo <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Oddomo <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                    <label class="form-check-label" for="flexCheckDefault1">
+                                        Phyphon <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                                    <label class="form-check-label" for="flexCheckDefault2">
+                                        Traumasng <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Gender</label>
+                            <div class="custom-filter-checkbox custom-scrollbar">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault01">
+                                    <label class="form-check-label" for="flexCheckDefault01">
+                                        All
+                                        <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked02" checked="">
+                                    <label class="form-check-label" for="flexCheckChecked02">
+                                        Men <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault03">
+                                    <label class="form-check-label" for="flexCheckDefault03">
+                                        Women <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault04">
+                                    <label class="form-check-label" for="flexCheckDefault04">
+                                        Other <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Short by</label>
+                            <div class="custom-filter-checkbox custom-scrollbar">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault011">
+                                    <label class="form-check-label" for="flexCheckDefault011">
+                                        Most Popular <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked022" checked="">
+                                    <label class="form-check-label" for="flexCheckChecked022">
+                                        New Arrivals <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault033">
+                                    <label class="form-check-label" for="flexCheckDefault033">
+                                        High to Low Price <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault044">
+                                    <label class="form-check-label" for="flexCheckDefault044">
+                                        Low to High Price <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="price-range">
+                                <label class="form-label title-color text-start">Price Range</label>
+                                <div class="range-slider">
+                                    <div class="range-container">
+                                        <div class="sliders-control">
+                                            <input id="fromSlider" type="range" value="100" min="0" max="1000">
+                                            <input id="toSlider" type="range" value="750" min="0" max="1000">
+                                        </div>
+                                        <div class="form_control">
+                                            <div class="form-control-container start-price">
+                                                <span class="theme-color">$</span>
+                                                <input class="form-control-container-time-input" type="number" id="fromInput" value="100" min="0" max="1000">
+                                            </div>
+                                            <div class="form-control-container end-price">
+                                                <span class="theme-color">$</span>
+                                                <input class="form-control-container-time-input" type="number" id="toInput" value="750" min="0" max="1000">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Colors</label>
+                            <div class="color-ratings custom-filter-checkbox custom-scrollbar">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="color01">
+                                    <label class="form-check-label color1" for="color01"></label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="color02" checked="">
+                                    <label class="form-check-label color2" for="color02"></label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="color03">
+                                    <label class="form-check-label color3" for="color03"></label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="color04">
+                                    <label class="form-check-label color4" for="color04"></label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="color05">
+                                    <label class="form-check-label color5" for="color05"></label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="color06">
+                                    <label class="form-check-label color6" for="color06"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Availibility</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="main-form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="availibility1">
+                                    <label class="form-check-label" for="availibility1">
+                                        In Stock
+                                    </label>
+                                </div>
+                                <div class="main-form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="availibility2" checked="">
+                                    <label class="form-check-label" for="availibility2">
+                                        Out of Stock
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="fixed-btn-grp">
+                    <div class="custom-container">
+                        <div class=" d-flex align-items-center gap-3 w-100 m-0">
+                            <a data-bs-dismiss="offcanvas" class="btn white-btn w-50">Reset</a>
+                            <a data-bs-dismiss="offcanvas" class="btn theme-btn w-50">Apply</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Filter modal end -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax icon -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- range slider js -->
+    <script src="{% static '' %}main/assets/js/range-slider.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>

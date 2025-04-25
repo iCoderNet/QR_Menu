@@ -1,0 +1,238 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- iconsax css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" id="rtl-link" type="text/css" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a onclick="history.back();">
+                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                </a>
+                <h3>Bottom Menu</h3>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- element bottom-menu start -->
+    <section class="section-b-space">
+        <div class="custom-container">
+            <div class="element-title mt-0 mb-3">
+                <h3 class="theme-color">Template</h3>
+            </div>
+
+            <ul class="bottom-menu elements-navbar position-relative">
+                <li>
+                    <a href="#" class="active">
+                        <i class="iconsax text-content" data-icon="home-2"></i>
+                        <h6>Home</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="grid-apps"></i>
+                        <h6>Category</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="shopping-cart"></i>
+                        <h6>Cart</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="heart"></i>
+                        <h6>Wishlist</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="user-2"></i>
+                        <h6>Profile</h6>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="element-title mb-3">
+                <h3 class="theme-color">Basic </h3>
+            </div>
+
+            <ul class="bottom-menu wo-highlight elements-navbar position-relative">
+                <li>
+                    <a href="#" class="active">
+                        <i class="iconsax text-content" data-icon="home-2"></i>
+                        <h6>Home</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="grid-apps"></i>
+                        <h6>Category</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="shopping-cart"></i>
+                        <h6>Cart</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="heart"></i>
+                        <h6>Wishlist</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="user-2"></i>
+                        <h6>Profile</h6>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="element-title mb-3">
+                <h3 class="theme-color">Only Icon </h3>
+            </div>
+
+            <ul class="bottom-menu only-icon wo-highlight elements-navbar position-relative">
+                <li>
+                    <a href="#" class="active">
+                        <i class="iconsax text-content" data-icon="home-2"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="grid-apps"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="shopping-cart"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="heart"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="user-2"></i>
+                    </a>
+                </li>
+            </ul>
+
+
+            <div class="element-title mb-3">
+                <h3 class="theme-color">With Highlight </h3>
+            </div>
+
+
+            <ul class="bottom-menu with-highlight elements-navbar position-relative">
+                <li>
+                    <a href="#" class="active">
+                        <i class="iconsax text-content" data-icon="home-2"></i>
+                        <h6>Home</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="grid-apps"></i>
+                        <h6>Category</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="shopping-cart"></i>
+                        <h6>Cart</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="heart"></i>
+                        <h6>Wishlist</h6>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="iconsax text-content" data-icon="user-2"></i>
+                        <h6>Profile</h6>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- element bottom-menu end -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax js -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>

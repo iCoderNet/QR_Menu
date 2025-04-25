@@ -1,0 +1,205 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" id="rtl-link" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+    <!-- iconsax icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header starts -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a onclick="history.back();">
+                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                </a>
+                <h3>Choose your Language</h3>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- search section starts -->
+    <section class="section-sm-t-space">
+        <div class="custom-container">
+            <form class="theme-form search-form p-0 d-flex align-content-center gap-3">
+                <div class="form-group w-100">
+                    <div class="form-input">
+                        <input type="search" class="form-control search with-mic" id="inputusername" placeholder="Search here.....">
+                        <i class="iconsax search-icon" data-icon="search-normal-2"> </i>
+                        <i class="iconsax mic-icon" data-icon="mic-2"> </i>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- search section end -->
+
+    <!-- languages section starts -->
+    <section class="section-b-space">
+        <div class="custom-container">
+            <div class="form-group mt-0">
+                <div class="language-type  custom-filter-checkbox">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage1" checked="">
+                        <label class="form-check-label" for="lunguage1">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/1.svg" alt="">
+                            English
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage2">
+                        <label class="form-check-label" for="lunguage2">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/2.svg" alt="">
+                            Hindi
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage3">
+                        <label class="form-check-label" for="lunguage3">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/3.svg" alt="">
+                            French
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage4">
+                        <label class="form-check-label" for="lunguage4">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/4.svg" alt="">
+                            German
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage5">
+                        <label class="form-check-label" for="lunguage5">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/5.svg" alt="">
+                            Italian
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage6">
+                        <label class="form-check-label" for="lunguage6">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/6.svg" alt="">
+                            Chinese
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage7">
+                        <label class="form-check-label" for="lunguage7">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/7.svg" alt="">
+                            Urdu
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage8">
+                        <label class="form-check-label" for="lunguage8">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/8.svg" alt="">
+                            Canadian
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage9">
+                        <label class="form-check-label" for="lunguage9">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/9.svg" alt="">
+                            Japanese
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage10">
+                        <label class="form-check-label" for="lunguage10">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/10.svg" alt="">
+                            Danish
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="lunguage11">
+                        <label class="form-check-label" for="lunguage11">
+                            <img class="img-fluid language-icon" src="{% static '' %}main/assets/images/icon/11.svg" alt="">
+                            Dutch
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixed-btn-grp">
+            <div class="custom-container">
+                <a href="onboarding.html" class="btn theme-btn w-100">Select</a>
+            </div>
+        </div>
+    </section>
+    <!-- languages section end -->
+
+    <!-- pwa install app popup start -->
+    <div class="offcanvas offcanvas-bottom addtohome-popup theme-offcanvas show" tabindex="-1" id="offcanvas" aria-modal="true" role="dialog">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas-body p-0">
+            <div class="app-info">
+                <img src="{% static '' %}main/assets/images/logo/48.png" class="img-fluid" alt="">
+                <div class="content">
+                    <h3>Kartify App</h3>
+                    <a href="#">www.kartify-app.com</a>
+                </div>
+            </div>
+
+            <a href="#!" class="btn theme-btn install-app home-screen-btn m-0" id="installApp">Add to home
+                screen</a>
+        </div>
+    </div>
+    <!-- pwa install app popup end -->
+
+    <!-- panel-space start -->
+    <div class="panel-space"></div>
+    <!-- panel-space end -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax icon -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- homescreen popup icon -->
+    <script src="{% static '' %}main/assets/js/homescreen-popup.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</head></html>

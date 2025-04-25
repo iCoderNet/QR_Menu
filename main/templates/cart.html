@@ -1,0 +1,547 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" id="rtl-link" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+    <!-- swiper css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/swiper-bundle.min.css">
+
+    <!-- iconsax icon css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a href="#sidebar" class="sidebar-btn" data-bs-toggle="offcanvas">
+                    <i class="iconsax" data-icon="text-align-left"></i>
+                </a>
+                <h3>My Cart <span class="content-color"> (2 Item) </span></h3>
+                <a href="javascript:clearCart()" class="color-theme-color fw-normal fs-14 mt-1">Clear All</a>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- empty cart -->
+    <section class="section-b-space empty-page d-none">
+        <div class="custom-container">
+            <img class="img-fluid" src="{% static '' %}main/assets/images/empty-cart.svg" alt="empty-cart">
+
+            <h3>Your Cart is Empty</h3>
+            <h5>Your cart is empty. Start shopping now!</h5>
+        </div>
+    </section>
+
+    <div class="main__cart">
+        <!-- cart section starts -->
+        <section class="section-sm-t-space">
+            <div class="custom-container">
+                <div class="row gy-3 gx-0">
+                    <div class="col-12">
+                        <div class="product-box vertical-product">
+                            <a href="product-details.html" class="product-img">
+                                <img src="{% static '' %}main/assets/images/product/11.png" class="img-fluid" alt="">
+                            </a>
+                            <div class="product-content">
+                                <h6 class="content-color">Apple</h6>
+                                <a href="product-details.html" class="product-top">
+                                    <h5 class="title-color white-nowrap">Smart TV System </h5>
+                                </a>
+                                <div class="bottom-content cart-content">
+                                    <h5 class="price">$450</h5>
+                                    <div class="plus-minus">
+                                        <i class="iconsax icon sub" data-icon="minus"> </i>
+                                        <input type="number" disabled="" value="1" min="1" max="100">
+                                        <i class="iconsax icon add" data-icon="add"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="close-icon">
+                                <i class="iconsax icon close" data-icon="add"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="product-box vertical-product">
+                            <a href="product-details.html" class="product-img">
+                                <img src="{% static '' %}main/assets/images/product/12.png" class="img-fluid" alt="">
+                            </a>
+                            <div class="product-content">
+                                <h6 class="content-color">Gadgets</h6>
+                                <a href="product-details.html" class="product-top">
+                                    <h5 class="title-color white-nowrap">Latest Smart Camera </h5>
+                                </a>
+                                <div class="bottom-content cart-content">
+                                    <h5 class="price">$450</h5>
+                                    <div class="plus-minus">
+                                        <i class="iconsax icon sub" data-icon="minus"> </i>
+                                        <input type="number" disabled="" value="1" min="1" max="10">
+                                        <i class="iconsax icon add" data-icon="add"></i>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="close-icon">
+                                <i class="iconsax icon close" data-icon="add"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section>
+            <div class="custom-container">
+                <div class="promo-code position-relative">
+                    <input type="email" class="form-control code-form-control" placeholder="Apply promo code">
+                    <a href="#" class="btn btn-small theme-btn apply-btn fw-medium mt-0">Apply</a>
+                </div>
+            </div>
+        </section>
+    
+        <section>
+            <div class="custom-container">
+                <div class="title mb-2">
+                    <h3>Price Details</h3>
+                </div>
+                <div class="bill-box">
+                    <div class="bill-box-content">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="fw-medium content-color">Price (2 Items)</h5>
+                            <h5 class="fw-medium title-color">$900.00</h5>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between pt-2">
+                            <h5 class="fw-medium content-color">Discount</h5>
+                            <h5 class="fw-medium title-color">$100.00</h5>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between pt-2">
+                            <h5 class="fw-medium content-color">Delivery Charges</h5>
+                            <h5 class="fw-medium error-color">$100.00</h5>
+                        </div>
+    
+                        <div class="total-amount">
+                            <h5 class="fw-medium title-color">Total Amount</h5>
+                            <h4 class="fw-medium theme-color">$900.00</h4>
+                        </div>
+                    </div>
+                </div>
+                <h6 class="color-theme-color fw-medium mt-2">You will save $999 on this order</h6>
+            </div>
+        </section>
+    
+        <div class="secure-payment-wrapper mt-24">
+            <img class="img-fluid" src="{% static '' %}main/assets/images/svg/secure.svg" alt="secure">
+            <p>Safe and secure payments. Easy returns. 100% Authentic products.</p>
+        </div>
+    
+        <section class="section-lg-b-space">
+            <div class="custom-container">
+                <div class="title">
+                    <h3>Best Selling</h3>
+                    <a href="#" class="see-all">See all</a>
+                </div>
+    
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="product-box">
+                            <div class="product-img">
+                                <img src="{% static '' %}main/assets/images/product/1.png" class="img-fluid img" alt="">
+                                <div class="like-icon animate ">
+                                    <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
+                                    <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
+                                    <div class="effect-group">
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <a href="cart.html" class="add-icon">
+                                    <i class="iconsax" data-icon="add"></i>
+                                </a>
+                                <h6 class="content-color white-nowrap">Mobile</h6>
+                                <a href="product-details.html">
+                                    <h5 class="title-color fw-medium white-nowrap mt-1">Latest Smart Mobile Phone</h5>
+                                </a>
+                                <ul class="rating-list">
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                    </li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <h5 class="price">$320</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="product-box">
+                            <div class="product-img">
+                                <img src="{% static '' %}main/assets/images/product/2.png" class="img-fluid img" alt="">
+                                <div class="like-icon animate active inactive">
+                                    <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
+                                    <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
+                                    <div class="effect-group">
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <div class="product-content">
+                                <a href="cart.html" class="add-icon">
+                                    <i class="iconsax" data-icon="add"></i>
+                                </a>
+    
+                                <a href="product-details.html">
+                                    <h6 class="content-color white-nowrap">Speaker</h6>
+                                    <h5 class="title-color fw-medium white-nowrap mt-1">Wireless Audio System</h5>
+                                </a>
+                                <ul class="rating-list">
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                    </li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <h5 class="price">$120</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-6">
+                        <div class="product-box">
+                            <div class="product-img">
+                                <img src="{% static '' %}main/assets/images/product/3.png" class="img-fluid img" alt="">
+                                <div class="like-icon animate ">
+                                    <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
+                                    <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
+                                    <div class="effect-group">
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <a href="cart.html" class="add-icon">
+                                    <i class="iconsax" data-icon="add"></i>
+                                </a>
+                                <h6 class="content-color white-nowrap">Laptop</h6>
+                                <a href="product-details.html">
+                                    <h5 class="title-color fw-medium white-nowrap mt-1">Latest Smart laptop</h5>
+                                </a>
+                                <ul class="rating-list">
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                    </li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <h5 class="price">$550</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="product-box">
+                            <div class="product-img">
+                                <img src="{% static '' %}main/assets/images/product/4.png" class="img-fluid img" alt="">
+                                <div class="like-icon animate active inactive">
+                                    <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
+                                    <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
+                                    <div class="effect-group">
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                        <span class="effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="product-content">
+                                <a href="cart.html" class="add-icon">
+                                    <i class="iconsax" data-icon="add"></i>
+                                </a>
+    
+                                <a href="product-details.html">
+                                    <h6 class="content-color white-nowrap">Headphone</h6>
+                                    <h5 class="title-color fw-medium white-nowrap mt-1">Wireless Bluetooth Headphone</h5>
+                                </a>
+                                <ul class="rating-list">
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
+                                    </li>
+                                    <li>
+                                        <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
+                                    </li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <h5 class="price">$50 </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- cart buttons start -->
+        <div class="cart-btns">
+            <div>
+                <h6 class="content-color fw-medium"><del>$1000.00</del></h6>
+                <h4 class="fw-medium title-color">$900.00</h4>
+            </div>
+            <a href="checkout.html" class="btn btn-small theme-btn">
+                <i class="iconsax me-2" data-icon="bank-card"></i>
+                Place Order
+            </a>
+        </div>
+        <!-- cart buttons end -->
+    </div>
+
+
+    <!-- bottom panel start -->
+    <ul class="bottom-menu">
+        <li>
+            <a href="home.html">
+                <i class="iconsax text-content" data-icon="home-2"></i>
+                <h6>Home</h6>
+            </a>
+        </li>
+
+        <li>
+            <a href="category.html">
+                <i class="iconsax text-content" data-icon="grid-apps"></i>
+                <h6>Category</h6>
+            </a>
+        </li>
+
+        <li>
+            <a href="cart.html" class="active">
+                <i class="iconsax text-content" data-icon="shopping-cart"></i>
+                <h6>Cart</h6>
+            </a>
+        </li>
+
+        <li>
+            <a href="wishlist.html">
+                <i class="iconsax text-content" data-icon="heart"></i>
+                <h6>Wishlist</h6>
+            </a>
+        </li>
+
+        <li>
+            <a href="account.html">
+                <i class="iconsax text-content" data-icon="user-2"></i>
+                <h6>Profile</h6>
+            </a>
+        </li>
+    </ul>
+    <!-- bottom panel end -->
+
+    <!-- sidebar starts -->
+    <div class="offcanvas sidebar-offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header sidebar-header">
+            <div class="sidebar-logo">
+                <img class="img-fluid logo" src="{% static '' %}main/assets/images/logo/logo.png" alt="logo">
+            </div>
+        </div>
+        <div class="offcanvas-body">
+            <a href="edit-profile.html" class="profile-part">
+                <img class="img-fluid profile-pic" src="{% static '' %}main/assets/images/avatar/1.png" alt="p8">
+                <div>
+                    <h3>Smitha Williams</h3>
+                    <span>Edit Account</span>
+                </div>
+            </a>
+            <ul class="link-section switch-section">
+                <li>
+                    <a href="home.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="home-2"></i>
+                        <h3>Home</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="category.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="grid-apps"></i>
+                        <h3>Category</h3>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="cart.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="shopping-cart"></i>
+
+                        <h3>Cart</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="wishlist.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="heart"></i>
+                        <h3>Wishlist</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="account.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="user-2"></i>
+                        <h3>Profile</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="page-listing.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="book-closed"> </i>
+                        <h3>Template Pages</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="elements-page.html" class="pages">
+                        <i class="iconsax sidebar-icon icon" data-icon="document-text-1"> </i>
+                        <h3> Template Elements</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <div class="pages">
+                        <i class="iconsax sidebar-icon" data-icon="repeat"> </i>
+                        <h3>RTL</h3>
+                    </div>
+                    <div class="switch-btn">
+                        <input id="dir-switch" type="checkbox">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pages">
+                        <i class="iconsax sidebar-icon" data-icon="brush-3"> </i>
+                        <h3>Dark</h3>
+                    </div>
+                    <div class="switch-btn">
+                        <input id="dark-switch" type="checkbox">
+                    </div>
+                </li>
+
+            </ul>
+
+            <div class="bottom-sidebar">
+                <a href="login.html" class="pages">
+                    <i class="iconsax sidebar-icon" data-icon="logout-2"> </i>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- sidebar end -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax icon -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- remove-item js -->
+    <script src="{% static '' %}main/assets/js/remove-item.js"></script>
+
+    <!-- quantity js -->
+    <script src="{% static '' %}main/assets/js/quantity.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kartify">
+    <meta name="keywords" content="kartify">
+    <meta name="author" content="kartify">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="{% static '' %}main/assets/images/logo/favicon.png" type="image/x-icon">
+    <title>Kartify App</title>
+    <link rel="apple-touch-icon" href="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="theme-color" content="#2777FC">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kartify">
+    <meta name="msapplication-TileImage" content="{% static '' %}main/assets/images/logo/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- font link -->
+    <link rel="stylesheet" href="{% static '' %}main/assets/css/br-hendrix.css">
+
+    <!-- iconsax css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" id="rtl-link" type="text/css" href="{% static '' %}main/assets/css/vendors/bootstrap.css">
+
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
+</head>
+
+<body>
+    <!-- loader start-->
+    <div class="loader-wrapper" id="loader">
+        <span class="loader"></span>
+    </div>
+    <!-- loader end -->
+
+    <!-- header start -->
+    <header class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <a href="elements-page.html">
+                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                </a>
+                <h3>Offcanvas</h3>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- element offcanvas start -->
+    <section class="section-t-space section-b-space">
+        <div class="custom-container">
+            <div class="element-title mt-0 mb-3">
+                <h3 class="theme-color">Template Offcanvas</h3>
+            </div>
+
+            <button class="btn theme-btn w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate">Template Offcanvas </button>
+
+            <div class="element-title mb-3">
+                <h3 class="theme-color">Top Offcanvas</h3>
+            </div>
+
+            <button class="btn theme-btn w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">Top Offcanvas </button>
+
+            <div class="element-title mb-3">
+                <h3 class="theme-color">Right Offcanvas</h3>
+            </div>
+
+            <button class="btn theme-btn w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"> Right Offcanvas</button>
+
+            <div class="element-title mb-3">
+                <h3 class="theme-color">Bottom Offcanvas</h3>
+            </div>
+
+            <button class="btn theme-btn w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"> Bottom Offcanvas</button>
+
+            <div class="element-title mb-3">
+                <h3 class="theme-color">Left Offcanvas</h3>
+            </div>
+
+            <button class="btn theme-btn w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasleft">Left Offcanvas</button>
+
+
+            <!-- template offcanvas start -->
+            <div class="offcanvas offcanvas-bottom success-offcanvas" tabindex="-1" id="offcanvasTemplate">
+                <div class="offcanvas-header pt-0 px-0">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Delete Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body text-center p-0 pt-3 pb-4">
+                    <h5 class="fw-medium title-color">Are you sure want to delete this app?</h5>
+                </div>
+                <div class="offcanvas-foorter d-flex align-items-center gap-3 shadow-none">
+                    <a href="#" data-bs-dismiss="offcanvas" class="btn white-btn w-50">Cancel</a>
+                    <a href="#" data-bs-dismiss="offcanvas" class="btn theme-btn w-50">Delate</a>
+                </div>
+            </div>
+            <!-- template offcanvas end -->
+
+            <!-- offcanvas top start -->
+            <div class=" offcanvas element-offcanvas offcanvas-top bottom-unset p-0" tabindex="-1" id="offcanvasTop">
+                <div class="offcanvas-header ">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Top Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
+                        spring
+                        which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.
+                    </p>
+                </div>
+            </div>
+            <!-- offcanvas top end -->
+
+            <!-- offcanvas right start -->
+            <div class=" offcanvas element-offcanvas offcanvas-end p-0" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header ">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Right Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
+                        spring
+                        which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.
+                    </p>
+                </div>
+            </div>
+            <!-- offcanvas right end -->
+
+            <!-- offcanvas bottom start -->
+            <div class="offcanvas element-offcanvas offcanvas-bottom p-0" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                <div class="offcanvas-header ">
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Bottom Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
+                        spring
+                        which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.
+                    </p>
+                </div>
+            </div>
+            <!-- offcanvas bottom end -->
+
+            <!-- offcanvas left start -->
+            <div class="offcanvas element-offcanvas offcanvas-start p-0" tabindex="-1" id="offcanvasleft" aria-labelledby="offcanvasleftLabel">
+                <div class="offcanvas-header ">
+                    <h5 class="offcanvas-title" id="offcanvasleftLabel">Left Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
+                        spring
+                        which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.
+                    </p>
+                </div>
+            </div>
+            <!-- offcanvas left end -->
+        </div>
+    </section>
+    <!-- element offcanvas end -->
+
+    <!-- bootstrap js -->
+    <script src="{% static '' %}main/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- iconsax js -->
+    <script src="{% static '' %}main/assets/js/iconsax-icon.js"></script>
+
+    <!-- template-setting js -->
+    <script src="{% static '' %}main/assets/js/template-setting.js"></script>
+
+    <!-- script js -->
+    <script src="{% static '' %}main/assets/js/script.js"></script>
+</body>
+
+</html>
