@@ -30,6 +30,9 @@
     <!-- iconsax icon css -->
     <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/iconsax.css">
 
+    <!-- swiper css -->
+    <link rel="stylesheet" type="text/css" href="{% static '' %}main/assets/css/vendors/swiper-bundle.min.css">
+
     <!-- Theme css -->
     <link rel="stylesheet" id="change-link" type="text/css" href="{% static '' %}main/assets/css/style.css">
 </head>
@@ -49,6 +52,9 @@
                     <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
                 </a>
                 <h3>Mobile</h3>
+                <a href="#">
+                    <i class="iconsax search-icon" data-icon="search-normal-2"><h1>sa;p,</h1></i>
+                </a>
             </div>
         </div>
     </header>
@@ -60,9 +66,9 @@
             <form class="theme-form search-form  p-0 d-flex align-content-center gap-2">
                 <div class="form-group w-100">
                     <div class="form-input">
-                        <input type="search" class="form-control search " id="inputusername" placeholder="Search here.....">
+                        <input type="search" class="form-control search " id="inputusername" placeholder="Qanday taom qidiryapsiz?">
                         <i class="iconsax search-icon" data-icon="search-normal-2"> </i>
-                        <i class="iconsax mic-icon" data-icon="mic-2"> </i>
+                        {% comment %} <i class="iconsax mic-icon" data-icon="mic-2"> </i> {% endcomment %}
                     </div>
                 </div>
             </form>
@@ -70,15 +76,62 @@
     </section>
     <!-- search section end -->
 
+    <div class="sticky-top bg-white py-2" style="top: 50px; z-index: 2;">
+        <section class="section-sm-t-space">
+            <div class="custom-container">
+                <div class="form-check ps-0">
+                    <div class="custom-filter-checkbox custom-scrollbar">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="filterCheckAll" checked="">
+                            <label class="form-check-label" for="filterCheckAll">
+                                Barchasi <i class="iconsax close-icon text-white" data-icon="add"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckDefault" data-category="pizza">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Pizza <i class="iconsax close-icon text-white" data-icon="add"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckChecked" data-category="sendvich">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Sendvich <i class="iconsax close-icon text-white" data-icon="add"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckDefault1" data-category="snack">
+                            <label class="form-check-label" for="flexCheckDefault1">
+                                Snack <i class="iconsax close-icon text-white" data-icon="add"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckDefault2" data-category="salat">
+                            <label class="form-check-label" for="flexCheckDefault2">
+                                Salat <i class="iconsax close-icon text-white" data-icon="add"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckDefault3" data-category="ichimliklar">
+                            <label class="form-check-label" for="flexCheckDefault3">
+                                Ichimliklar <i class="iconsax close-icon text-white" data-icon="add"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <section class="section-sm-t-space">
         <div class="custom-container">
             <div class="filter-grid-btn d-flex align-items-centerr gap-3">
                 <a href="#sort" data-bs-toggle="offcanvas" class="btn white-btn theme-color d-flex align-items-center justify-content-center gap-2 w-50">
-                    <i class="iconsax filter-icon" data-icon="setting-3"> </i> Sort by
+                    <i class="iconsax filter-icon" data-icon="setting-3"> </i> Tartiblash
                 </a>
 
                 <a href="#filter" data-bs-toggle="offcanvas" class="btn white-btn  theme-color  d-flex align-items-center justify-content-center gap-2 w-50">
-                    <i class="iconsax filter-icon" data-icon="filter"> </i> Filter by
+                    <i class="iconsax filter-icon" data-icon="filter"> </i> Saralash
                 </a>
             </div>
         </div>
@@ -92,10 +145,65 @@
                 <div class="col-6">
                     <div class="product-box">
                         <div class="product-img">
-                            <div class="badge-img">
-                                <span> Sale</span>
+                            <!-- <div class="badge-img">
+                                <span>Hot</span>
+                            </div> -->
+                            <img src="{% static '' %}main/assets/images/product/food/peperoni.webp" class="img-fluid img" alt="">
+                        </div>
+                        <div class="product-content">
+                            <a href="javascript:void(0);" class="add-icon" onclick="plusOrderProduct(this);">
+                                <i class="iconsax" data-icon="add"></i>
+                            </a>
+                            <h6 class="content-color white-nowrap">Pizza</h6>
+                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate">
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Pepperoni Pizza</h5>
+                            </a>
+                            <div class="bottom-content">
+                                <h5 class="price">320.000 <del>so'm</del></h5>
                             </div>
-                            <img src="{% static '' %}main/assets/images/product/1.png" class="img-fluid img" alt="">
+                            <div class="d-none justify-content-center align-items-center mt-2">
+                                <div class="plus-minus">
+                                    <i class="iconsax icon sub" data-icon="minus" onclick="minusOrderProduct(this);"> </i>
+                                    <input type="number" disabled="" value="1" min="1" max="100">
+                                    <i class="iconsax icon add" data-icon="add" onclick="plusOrderProduct(this);"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="product-box">
+                        <div class="product-img">
+                            <img src="{% static '' %}main/assets/images/product/food/sendvich.webp" class="img-fluid img" alt="">
+                        </div>
+
+
+                        <div class="product-content">
+                            <a href="javascript:void(0);" class="add-icon" onclick="plusOrderProduct(this);">
+                                <i class="iconsax" data-icon="add"></i>
+                            </a>
+
+                            <a href="product-details.html#= data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate""content-color white-nowrap">Sendvich</h6>
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Sendvich Meat</h5>
+                            </a>
+                            <div class="bottom-content">
+                                <h5 class="price">200.000 <del>so'm</del></h5>
+                            </div>
+                            <div class="d-none justify-content-center align-items-center mt-2">
+                                <div class="plus-minus">
+                                    <i class="iconsax icon sub" data-icon="minus" onclick="minusOrderProduct(this);"> </i>
+                                    <input type="number" disabled="" value="1" min="1" max="100">
+                                    <i class="iconsax icon add" data-icon="add" onclick="plusOrderProduct(this);"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="product-box">
+                        <div class="product-img">
+                            <img src="{% static '' %}main/assets/images/product/food/sezar.webp" class="img-fluid img" alt="">
                             <div class="like-icon animate ">
                                 <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
                                 <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
@@ -109,32 +217,21 @@
                             </div>
                         </div>
                         <div class="product-content">
-                            <a href="cart.html" class="add-icon">
+                            <a href="javascript:void(0);" class="add-icon" onclick="plusOrderProduct(this);">
                                 <i class="iconsax" data-icon="add"></i>
                             </a>
-                            <h6 class="content-color white-nowrap">Mobile</h6>
-                            <a href="product-details.html">
-                                <h5 class="title-color fw-medium white-nowrap mt-1">Latest Smart Mobile Phone</h5>
+                            <h6 class="content-color white-nowrap">Salat</h6>
+                            <a href="product-details.html#= data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate""title-color fw-medium white-nowrap mt-1">Sezar Salat</h5>
                             </a>
-                            <ul class="rating-list">
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
-                                </li>
-                            </ul>
                             <div class="bottom-content">
-                                <h5 class="price">$320 <del>$350</del></h5>
+                                <h5 class="price">150.000 <del>so'm</del></h5>
+                            </div>
+                            <div class="d-none justify-content-center align-items-center mt-2">
+                                <div class="plus-minus">
+                                    <i class="iconsax icon sub" data-icon="minus" onclick="minusOrderProduct(this);"> </i>
+                                    <input type="number" disabled="" value="1" min="1" max="100">
+                                    <i class="iconsax icon add" data-icon="add" onclick="plusOrderProduct(this);"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -142,102 +239,80 @@
                 <div class="col-6">
                     <div class="product-box">
                         <div class="product-img">
-                            <img src="{% static '' %}main/assets/images/product/5.png" class="img-fluid img" alt="">
-                            <div class="like-icon animate active inactive">
-                                <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
-                                <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
-                                <div class="effect-group">
-                                    <span class="effect"></span>
-                                    <span class="effect"></span>
-                                    <span class="effect"></span>
-                                    <span class="effect"></span>
-                                    <span class="effect"></span>
-                                </div>
-                            </div>
+                            <img src="{% static '' %}main/assets/images/product/food/vegan.webp" class="img-fluid img" alt="">
                         </div>
 
                         <div class="product-content">
-                            <a href="cart.html" class="add-icon">
+                            <a href="javascript:void(0);" class="add-icon" onclick="plusOrderProduct(this);">
                                 <i class="iconsax" data-icon="add"></i>
                             </a>
 
-                            <a href="product-details.html">
-                                <h6 class="content-color white-nowrap">Speaker</h6>
-                                <h5 class="title-color fw-medium white-nowrap mt-1">Wireless Audio System</h5>
+                            <a href="product-details.html#= data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate""content-color white-nowrap">Pizza</h6>
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Vegen Pizza</h5>
                             </a>
-                            <ul class="rating-list">
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
-                                </li>
-                            </ul>
                             <div class="bottom-content">
-                                <h5 class="price">$860 <del>$940</del></h5>
+                                <h5 class="price">110.000 <del>so'm</del></h5>
+                            </div>
+                            <div class="d-none justify-content-center align-items-center mt-2">
+                                <div class="plus-minus">
+                                    <i class="iconsax icon sub" data-icon="minus" onclick="minusOrderProduct(this);"> </i>
+                                    <input type="number" disabled="" value="1" min="1" max="100">
+                                    <i class="iconsax icon add" data-icon="add" onclick="plusOrderProduct(this);"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-6">
                     <div class="product-box">
                         <div class="product-img">
-                            <div class="badge-img">
-                                <span> Sale</span>
-                            </div>
-                            <img src="{% static '' %}main/assets/images/product/8.png" class="img-fluid img" alt="">
-                            <div class="like-icon animate active inactive">
-                                <img class="img-fluid icon outline-icon" src="{% static '' %}main/assets/images/svg/heart-outline.svg" alt="">
-                                <img class="img-fluid icon fill-icon" src="{% static '' %}main/assets/images/svg/heart-fill.svg" alt="">
-                                <div class="effect-group">
-                                    <span class="effect"></span>
-                                    <span class="effect"></span>
-                                    <span class="effect"></span>
-                                    <span class="effect"></span>
-                                    <span class="effect"></span>
-                                </div>
-                            </div>
+                            <img src="{% static '' %}main/assets/images/product/food/kriliki.webp" class="img-fluid img" alt="">
                         </div>
 
                         <div class="product-content">
-                            <a href="cart.html" class="add-icon">
+                            <a href="javascript:void(0);" class="add-icon" onclick="plusOrderProduct(this);">
                                 <i class="iconsax" data-icon="add"></i>
                             </a>
 
-                            <a href="product-details.html">
-                                <h6 class="content-color white-nowrap">Headphone</h6>
-                                <h5 class="title-color fw-medium white-nowrap mt-1">Wireless Bluetooth Headphone
-                                </h5>
+                            <a href="product-details.html#= data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate""content-color white-nowrap">Snack</h6>
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Kriliki</h5>
                             </a>
-                            <ul class="rating-list">
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-fill.svg" alt="star">
-                                </li>
-                                <li>
-                                    <img src="{% static '' %}main/assets/images/svg/star-outline.svg" alt="star">
-                                </li>
-                            </ul>
                             <div class="bottom-content">
-                                <h5 class="price">$550 <del>$680</del></h5>
+                                <h5 class="price">190.000 <del>so'm</del></h5>
+                            </div>
+                            <div class="d-none justify-content-center align-items-center mt-2">
+                                <div class="plus-minus">
+                                    <i class="iconsax icon sub" data-icon="minus" onclick="minusOrderProduct(this);"> </i>
+                                    <input type="number" disabled="" value="1" min="1" max="100">
+                                    <i class="iconsax icon add" data-icon="add" onclick="plusOrderProduct(this);"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="product-box">
+                        <div class="product-img">
+                            <img src="{% static '' %}main/assets/images/product/food/kebabpitsa.webp" class="img-fluid img" alt="">
+                        </div>
+
+                        <div class="product-content">
+                            <a href="javascript:void(0);" class="add-icon" onclick="plusOrderProduct(this);">
+                                <i class="iconsax" data-icon="add"></i>
+                            </a>
+
+                            <a href="product-details.html#= data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate""content-color white-nowrap">Pizza</h6>
+                                <h5 class="title-color fw-medium white-nowrap mt-1">Kebab Pitsa</h5>
+                            </a>
+                            <div class="bottom-content">
+                                <h5 class="price">100.000 <del>so'm</del></h5>
+                            </div>
+                            <div class="d-none justify-content-center align-items-center mt-2">
+                                <div class="plus-minus">
+                                    <i class="iconsax icon sub" data-icon="minus" onclick="minusOrderProduct(this);"> </i>
+                                    <input type="number" disabled="" value="1" min="1" max="100">
+                                    <i class="iconsax icon add" data-icon="add" onclick="plusOrderProduct(this);"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -250,38 +325,38 @@
     <!-- sort offcanvas start -->
     <div class="offcanvas offcanvas-bottom filter-offcanvas" tabindex="-1" id="sort">
         <div class="offcanvas-header">
-            <h3>Sort By</h3>
+            <h3>Tartib bo'yicha ko'rsatish</h3>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <form class="theme-form border-design">
                 <div class="form-check">
                     <label class="form-check-label" for="flexRadioDefault1">
-                        Top Rated Product
+                        Avval Ommaboplari
                     </label>
                     <input class="form-check-input ms-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 </div>
                 <div class="form-check">
                     <label class="form-check-label" for="flexRadioDefault2">
-                        Latest Arrival
+                        Avval Arzonlari
                     </label>
                     <input class="form-check-input ms-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked="">
                 </div>
                 <div class="form-check">
                     <label class="form-check-label" for="flexRadioDefault3">
-                        Price (Highest first)
+                        Avval Qimmatlari
                     </label>
                     <input class="form-check-input ms-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked="">
                 </div>
                 <div class="form-check">
                     <label class="form-check-label" for="flexRadioDefault4">
-                        Price (Lowest first)
+                        Avval Yangi qo'shilganlari
                     </label>
                     <input class="form-check-input ms-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked="">
                 </div>
                 <div class="form-check">
                     <label class="form-check-label" for="flexRadioDefault5">
-                        Discount (Descending)
+                        Avval Chegirmadagilari
                     </label>
                     <input class="form-check-input ms-auto" type="radio" name="flexRadioDefault" id="flexRadioDefault5" checked="">
                 </div>
@@ -293,72 +368,70 @@
     <!-- Filter offcanvas start -->
     <div class="offcanvas offcanvas-bottom filter-offcanvas" tabindex="-1" id="filter">
         <div class="offcanvas-header">
-            <h3>Filter by</h3>
+            <h3>Saralash</h3>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <form class="theme-form pb-80">
                 <div class="form-check mb-4 ps-0">
-                    <label class="form-check-label title-color mb-2">Category</label>
-                    <select class="form-select bg-box-bg">
-                        <option selected="" disabled="">Select Category</option>
-                        <option value="1">Mobile</option>
-                        <option value="2">Laptop</option>
-                        <option value="3">Tablet</option>
-                        <option value="4">Headphone</option>
-                        <option value="5">Camera</option>
-                        <option value="6">Watch</option>
-                        <option value="7">Speaker</option>
-                        <option value="8">Fragrance</option>
-                    </select>
-                </div>
-                <div class="form-check mb-4 ps-0">
-                    <label class="form-check-label title-color mb-2">Brand</label>
+                    <label class="form-check-label title-color mb-2">Kategoriya</label>
                     <div class="custom-filter-checkbox custom-scrollbar">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="filterCheckAll" checked="">
+                            <label class="form-check-label" for="filterCheckAll">
+                                Barchasi <i class="iconsax close-icon text-white" data-icon="add"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckDefault" data-category="pizza">
                             <label class="form-check-label" for="flexCheckDefault">
-                                Divo <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                Pizza <i class="iconsax close-icon text-white" data-icon="add"></i>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckChecked" data-category="sendvich">
                             <label class="form-check-label" for="flexCheckChecked">
-                                Oddomo <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                Sendvich <i class="iconsax close-icon text-white" data-icon="add"></i>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckDefault1" data-category="snack">
                             <label class="form-check-label" for="flexCheckDefault1">
-                                Phyphon <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                Snack <i class="iconsax close-icon text-white" data-icon="add"></i>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckDefault2" data-category="salat">
                             <label class="form-check-label" for="flexCheckDefault2">
-                                Traumasng <i class="iconsax close-icon text-white" data-icon="add"></i>
+                                Salat <i class="iconsax close-icon text-white" data-icon="add"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" onchange="filterCategory(this);" value="" id="flexCheckDefault3" data-category="ichimliklar">
+                            <label class="form-check-label" for="flexCheckDefault3">
+                                Ichimliklar <i class="iconsax close-icon text-white" data-icon="add"></i>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-check mb-4 ps-0">
-                    <label class="form-check-label title-color mb-2">Price</label>
+                    {% comment %} <label class="form-check-label title-color mb-2">Narxi</label> {% endcomment %}
                     <div class="price-range">
-                        <label class="form-label title-color text-start">Price Range</label>
+                        <label class="form-label title-color text-start">Narx chizig'i</label>
                         <div class="range-slider">
                             <div class="range-container">
                                 <div class="sliders-control">
-                                    <input id="fromSlider" type="range" value="100" min="0" max="1000">
-                                    <input id="toSlider" type="range" value="750" min="0" max="1000">
+                                    <input id="fromSlider" type="range" value="10000" min="0" max="3000000">
+                                    <input id="toSlider" type="range" value="3000000" min="0" max="3000000">
                                 </div>
                                 <div class="form_control">
                                     <div class="form-control-container start-price">
-                                        <span class="theme-color">$</span>
-                                        <input class="form-control-container-time-input" type="number" id="fromInput" value="100" min="0" max="1000">
+                                        <input class="form-control-container-time-input" type="number" id="fromInput" value="10000" min="0" max="1000">
+                                        <span class="theme-color">so'm</span>
                                     </div>
                                     <div class="form-control-container end-price">
-                                        <span class="theme-color">$</span>
-                                        <input class="form-control-container-time-input" type="number" id="toInput" value="750" min="0" max="1000">
+                                        <input class="form-control-container-time-input" type="number" id="toInput" value="3000000" min="0" max="1000">
+                                        <span class="theme-color">so'm</span>
                                     </div>
                                 </div>
                             </div>
@@ -366,59 +439,29 @@
                     </div>
                 </div>
 
-                <div class="form-check mb-4 ps-0">
-                    <label class="form-check-label title-color mb-2">Colors</label>
-                    <div class="color-ratings custom-filter-checkbox">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="color1" checked="">
-                            <label class="form-check-label color1" for="color1"></label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="color2">
-                            <label class="form-check-label color2" for="color2"></label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="color3">
-                            <label class="form-check-label color3" for="color3"></label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="color4">
-                            <label class="form-check-label color4" for="color4"></label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="color5">
-                            <label class="form-check-label color5" for="color5"></label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="color6">
-                            <label class="form-check-label color6" for="color6"></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-check mb-4 ps-0">
-                    <label class="form-check-label title-color mb-2">Availibility</label>
+                {% comment %} <div class="form-check mb-4 ps-0">
+                    <label class="form-check-label title-color mb-2">Mavjudligi</label>
                     <div class="d-flex align-items-center gap-3">
                         <div class="main-form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault1" id="availibility1">
                             <label class="form-check-label mt-1" for="availibility1">
-                                In Stock
+                                Mavjud
                             </label>
                         </div>
                         <div class="main-form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault1" id="availibility2" checked="">
                             <label class="form-check-label mt-1" for="availibility2">
-                                Out of Stock
+                                Mavjud emas
                             </label>
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
 
                 <div class="fixed-btn-grp">
                     <div class="custom-container">
                         <div class=" d-flex align-items-center gap-3 w-100 m-0">
-                            <a data-bs-dismiss="offcanvas" class="btn white-btn w-50">Reset</a>
-                            <a data-bs-dismiss="offcanvas" class="btn theme-btn w-50">Apply</a>
+                            <a data-bs-dismiss="offcanvas" class="btn white-btn w-50">Tozalash</a>
+                            <a data-bs-dismiss="offcanvas" class="btn theme-btn w-50">Qo'llash</a>
                         </div>
                     </div>
                 </div>
@@ -426,6 +469,82 @@
         </div>
     </div>
     <!-- Filter offcanvas end -->
+
+    <div class="offcanvas offcanvas-bottom success-offcanvas" tabindex="-1" id="offcanvasTemplate">
+        <div class="offcanvas-header pt-0 px-0">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Taom Haqida</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body p-0 pt-3 pb-4">
+            <section class="product-style-image px-20 pt-0">
+                <div class="swiper product-thumbnail-img">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="img-fluid img" src="{% static '' %}main/assets/images/product-details/pizza/1.jpeg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="img-fluid img" src="{% static '' %}main/assets/images/product-details/pizza/2.jpeg">
+                        </div>
+                    </div>
+                </div>
+        
+            </section>
+            <div class="custom-container">
+                <div thumbsslider="" class="swiper product-thumbnail">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide thumbnail-image">
+                            <img class="img-fluid" src="{% static '' %}main/assets/images/product-details/pizza/1.jpeg">
+                        </div>
+                        <div class="swiper-slide thumbnail-image">
+                            <img class="img-fluid" src="{% static '' %}main/assets/images/product-details/pizza/2.jpeg">
+                        </div>        
+                    </div>
+                </div>
+            </div>
+            <!-- product details section end -->
+        
+            <!-- product content section starts -->
+            <section class="product-content-section">
+                <div class="custom-container">
+                    <div class="d-flex align-items-center justify-content-between gap-1">
+                        <h5 class="content-color fw-medium">Pizza</h5>
+                    </div>
+                    <h3 class="title-color fw-medium mt-2">Pepperoni Pizza</h3>
+        
+                    <h3 class="price fw-medium color-theme-color mt-2">399.000 
+                        <del class="content-color" style="text-decoration: none;">so'm</del> 
+                    </h3>
+        
+                    <div class="description mt-24">
+                        <h5 class="title-color fw-medium">Tavsif</h5>
+                        <p class="content-color fw-medium mt-2">Mozzarella pishloq va pomidor sousi bilan qo'sh pepperoni</p>
+                    </div>
+                </div>
+        
+                <!-- <div class="product-conditions mt-24">
+                    <ul class="condition-listing">
+                        <li class="condition-box">
+                            <div class="condition-icon">
+                                <i class="iconsax " data-icon="history"></i>
+                            </div>
+                            <h5 class="condition-text"> Up to 7 days returnable</h5>
+                        </li>
+                        <li class="condition-box">
+                            <div class="condition-icon">
+                                <i class="iconsax " data-icon="truck-fast"></i>
+                            </div>
+                            <h5 class="condition-text">Delivery in 3 days</h5>
+                        </li>
+                    </ul>
+                </div> -->
+            </section>
+        </div>
+        <div class="offcanvas-foorter d-flex align-items-center gap-3 shadow-none">
+            <a href="#" data-bs-dismiss="offcanvas" class="btn white-btn w-50">Cancel</a>
+            <a href="#" data-bs-dismiss="offcanvas" class="btn theme-btn w-50">Delate</a>
+        </div>
+    </div>
 
 
     <!-- bootstrap js -->
@@ -440,8 +559,35 @@
     <!-- range slider js -->
     <script src="{% static '' %}main/assets/js/range-slider.js"></script>
 
+    <!-- swiper js -->
+    <script src="{% static '' %}main/assets/js/swiper-bundle.min.js"></script>
+    <script src="{% static '' %}main/assets/js/custom-swiper.js"></script>
+
     <!-- script js -->
     <script src="{% static '' %}main/assets/js/script.js"></script>
+    <script src="{% static '' %}main/assets/js/plus_minus.js"></script>
+    <script>
+        function filterCategory(currentCheckBox) {
+            const isAllCheckbox = currentCheckBox.id === 'filterCheckAll';
+            const allCategoryCheckboxes = document.querySelectorAll('input[type="checkbox"][data-category]');
+            const filterCheckAll = document.querySelectorAll('#filterCheckAll');
+            
+            if (isAllCheckbox) {
+                allCategoryCheckboxes.forEach(ch => ch.checked = false);
+                filterCheckAll.forEach(ch => ch.checked = true);
+            } else {
+                document.querySelectorAll('#' + currentCheckBox.id).forEach(ch => ch.checked = currentCheckBox.checked);
+                if (currentCheckBox.checked) {
+                    filterCheckAll.forEach(ch => ch.checked = false);
+                } else {
+                    const anyChecked = Array.from(allCategoryCheckboxes).some(ch => ch.checked);
+                    if (!anyChecked) {
+                        filterCheckAll.forEach(ch => ch.checked = true);
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

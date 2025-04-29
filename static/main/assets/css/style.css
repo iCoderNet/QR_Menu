@@ -4415,7 +4415,7 @@ input [type="number"] {
       background-color: rgba(var(--border-color), 1); }
   .range-slider input[type="number"] {
     color: rgba(var(--theme-color), 1);
-    width: 45px;
+    width: auto;
     height: auto;
     text-align: center;
     font-size: 16px;
@@ -4891,14 +4891,14 @@ body:has(.tab-to-top-box[style="transform: scale(1);"]) .tab-to-top-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+    /* padding: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320))); */
     width: 100%;
     background-color: rgba(var(--box-bg), 0.6);
     border-radius: 6px 6px 0 0; }
     .product-box .product-img .img {
-      height: 100px;
-      -o-object-fit: contain;
-         object-fit: contain; }
+      height: 20vh;
+      -o-object-fit: cover;
+         object-fit: cover; }
     .product-box .product-img .badge-img {
       display: inline-block;
       padding: 2px 14px 0 10px;
@@ -4981,6 +4981,7 @@ body:has(.tab-to-top-box[style="transform: scale(1);"]) .tab-to-top-box {
         .product-box .product-content .bottom-content .price del {
           font-size: 14px;
           font-weight: 500;
+          text-decoration: none;
           color: rgba(var(--content-color), 1); }
       .product-box .product-content .bottom-content .rating {
         display: flex;
@@ -5079,6 +5080,36 @@ body:has(.tab-to-top-box[style="transform: scale(1);"]) .tab-to-top-box {
         height: 85px;
         -o-object-fit: cover;
            object-fit: cover; }
+
+    .product-content .plus-minus {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 999px; /* Pill shape */
+        padding: 5px 10px;
+        background-color: #fff;
+    }
+    
+    .product-content .plus-minus i {
+        cursor: pointer;
+        --iconsax-Size: 16px;
+        --iconsax-Color: rgba(var(--title-color), 1);
+        padding: 0 10px;
+        user-select: none;
+        transition: color 0.2s ease;
+    }
+    
+    .product-content .plus-minus input {
+        width: 40px;
+        text-align: center;
+        border: none;
+        background: transparent;
+        font-size: 18px;
+        font-weight: 500;
+        color: #007bff; /* Bootstrap's primary blue */
+        pointer-events: none; /* Disabled input won't react */
+    }
     .product-box.vertical-product .product-content {
       position: relative;
       padding: 8px;
