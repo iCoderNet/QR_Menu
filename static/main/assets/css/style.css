@@ -5838,7 +5838,7 @@ body.dark .apple-img {
       height: 100%;
       z-index: -1;
       background-color: rgba(var(--white), 1);
-      -webkit-mask-image: radial-gradient(circle at top, transparent 31px, black 32px);
+      --webkit-mask-image: radial-gradient(circle at top, transparent 31px, black 32px);
       border-radius: 20px 20px 0 0; }
   .elements-navbar.wo-highlight {
     padding-top: 0; }
