@@ -1,4 +1,4 @@
-function plusOrderProduct(currentTarget) {
+function plusOrderProduct(currentTarget, vertical=false) {
     // Find the closest parent with class 'product-content'
     const productContent = currentTarget.closest('.product-content');    
 
@@ -9,6 +9,10 @@ function plusOrderProduct(currentTarget) {
         if (hiddenDiv) {
             hiddenDiv.classList.remove('d-none');
             hiddenDiv.classList.add('d-flex');
+            console.log();
+            if(vertical && currentTarget.getAttribute('data-visibility') == null){
+                currentTarget.setAttribute('data-visibility', 'true');
+            }
         } else {
             const inputEL = productContent.querySelector('input[type="number"]');
             const maxNumber = Number(inputEL.getAttribute('max')) || 5;
