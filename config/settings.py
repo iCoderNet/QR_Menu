@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
+    'main','adminpanel'
 ]
 
 MIDDLEWARE = [
@@ -105,6 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+APPEND_SLASH = True
+
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -122,6 +125,8 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+SESSION_COOKIE_AGE = 1209600  # 2 hafta
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

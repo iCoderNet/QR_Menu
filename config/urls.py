@@ -19,6 +19,6 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/',include('adminpanel.urls')),
     path('', include('main.urls')),
 ] + static('/media/', document_root='media')
