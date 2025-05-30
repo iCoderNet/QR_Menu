@@ -51,9 +51,9 @@
                 <a onclick="history.back();">
                     <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
                 </a>
-                <h3>Mobile</h3>
-                <a onclick="history.back();">
-                    <img class="img-fluid icon-btn back-arrow" src="{% static '' %}main/assets/images/svg/back-arrow.svg" alt="back-arrow">
+                <h3>Barchasi</h3>
+                <a onclick="productMenuStyle(this);">
+                    <img src="{% static '' %}main/assets/images/svg/visualization.png" data-section="grid" style="width: 20px;" alt="grid-icon">
                 </a>
             </div>
         </div>
@@ -66,7 +66,7 @@
             <form class="theme-form search-form  p-0 d-flex align-content-center gap-2">
                 <div class="form-group w-100">
                     <div class="form-input">
-                        <input type="search" class="form-control search " id="inputusername" placeholder="Qanday taom qidiryapsiz?">
+                        <input type="search" class="form-control search " id="inputusername" placeholder="Qanday taom qidiryapsiz?" autocomplete="off">
                         <i class="iconsax search-icon" data-icon="search-normal-2"> </i>
                         {% comment %} <i class="iconsax mic-icon" data-icon="mic-2"> </i> {% endcomment %}
                     </div>
@@ -137,10 +137,12 @@
         </div>
     </section>
 
-    <!-- product section start -->
-    <section class="section-b-space">
+    <!-- product grid section -->
+    <section class="section-b-space grid-section-js">
         <div class="custom-container">
-
+            <div class="title">
+                <h3>Best Selling</h3>
+            </div>
             <div class="row g-3">
                 <div class="col-6">
                     <div class="product-box">
@@ -148,7 +150,7 @@
                             <!-- <div class="badge-img">
                                 <span>Hot</span>
                             </div> -->
-                            <img src="{% static '' %}main/assets/images/product/food/peperoni.webp" class="img-fluid img" alt="">
+                            <img src="{% static '' %}main/assets/images/product/food/peperoni.webp" class="img-fluid img" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate" alt="">
                         </div>
                         <div class="product-content">
                             <a href="javascript:void(0);" class="add-icon" onclick="plusOrderProduct(this);">
@@ -174,7 +176,7 @@
                 <div class="col-6">
                     <div class="product-box">
                         <div class="product-img">
-                            <img src="{% static '' %}main/assets/images/product/food/sendvich.webp" class="img-fluid img" alt="">
+                            <img src="{% static '' %}main/assets/images/product/food/sendvich.webp" class="img-fluid img" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate" alt="">
                         </div>
 
 
@@ -203,7 +205,7 @@
                 <div class="col-6">
                     <div class="product-box">
                         <div class="product-img">
-                            <img src="{% static '' %}main/assets/images/product/food/sezar.webp" class="img-fluid img" alt="">
+                            <img src="{% static '' %}main/assets/images/product/food/sezar.webp" class="img-fluid img" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate" alt="">
                         </div>
                         <div class="product-content">
                             <a href="javascript:void(0);" class="add-icon" onclick="plusOrderProduct(this);">
@@ -229,7 +231,7 @@
                 <div class="col-6">
                     <div class="product-box">
                         <div class="product-img">
-                            <img src="{% static '' %}main/assets/images/product/food/vegan.webp" class="img-fluid img" alt="">
+                            <img src="{% static '' %}main/assets/images/product/food/vegan.webp" class="img-fluid img" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate" alt="">
                         </div>
 
                         <div class="product-content">
@@ -256,7 +258,7 @@
                 <div class="col-6">
                     <div class="product-box">
                         <div class="product-img">
-                            <img src="{% static '' %}main/assets/images/product/food/kriliki.webp" class="img-fluid img" alt="">
+                            <img src="{% static '' %}main/assets/images/product/food/kriliki.webp" class="img-fluid img" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate" alt="">
                         </div>
 
                         <div class="product-content">
@@ -283,7 +285,7 @@
                 <div class="col-6">
                     <div class="product-box">
                         <div class="product-img">
-                            <img src="{% static '' %}main/assets/images/product/food/kebabpitsa.webp" class="img-fluid img" alt="">
+                            <img src="{% static '' %}main/assets/images/product/food/kebabpitsa.webp" class="img-fluid img" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate" alt="">
                         </div>
 
                         <div class="product-content">
@@ -310,7 +312,69 @@
             </div>
         </div>
     </section>
-    <!-- flash sale section start -->
+    
+    <!-- product horizontal section -->
+    <section class="section-sm-t-space vertical-section-js d-none">
+        <div class="custom-container">
+            <div class="title">
+                <h3>Best Selling</h3>
+            </div>
+            <div class="row gy-3 gx-0">
+                <div class="col-12">
+                    <div class="product-box vertical-product">
+                        <a href="#" class="product-img" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate">
+                            <img src="{% static '' %}main/assets/images/product/food/peperoni.webp" class="img-fluid" alt="">
+                        </a>
+                        <div class="product-content">
+                            <a href="javascript:void(0)" onclick="plusOrderProduct(this, true);" class="add-icon">
+                                <i class="iconsax text-white" data-icon="add"></i>
+                            </a>
+                            <h6 class="content-color pt-2">Pizza</h6>
+                            <a href="#" class="product-top" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate">
+                                <h5 class="title-color white-nowrap">Pepperoni Pizza </h5>
+                            </a>
+                            <div class="bottom-content">
+                                <h5 class="price">320.000 <del>so'm</del></h5>
+                            </div>
+                            <div class="d-none justify-content-end align-items-center mt-2 me-2">
+                                <div class="plus-minus plmn-vertical">
+                                    <i class="iconsax icon sub" data-icon="minus" onclick="minusOrderProduct(this);"> </i>
+                                    <input type="number" disabled="" value="1" min="1" max="100">
+                                    <i class="iconsax icon add" data-icon="add" onclick="plusOrderProduct(this);"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="product-box vertical-product">
+                        <a href="#" class="product-img" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate">
+                            <img src="{% static '' %}main/assets/images/product/food/peperoni.webp" class="img-fluid" alt="">
+                        </a>
+                        <div class="product-content">
+                            <a href="javascript:void(0)" onclick="plusOrderProduct(this, true);" class="add-icon">
+                                <i class="iconsax text-white" data-icon="add"></i>
+                            </a>
+                            <h6 class="content-color pt-2">Pizza</h6>
+                            <a href="#" class="product-top" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTemplate">
+                                <h5 class="title-color white-nowrap">Pepperoni Pizza </h5>
+                            </a>
+                            <div class="bottom-content">
+                                <h5 class="price">320.000 <del>so'm</del></h5>
+                            </div>
+                            <div class="d-none justify-content-end align-items-center mt-2 me-2">
+                                <div class="plus-minus plmn-vertical">
+                                    <i class="iconsax icon sub" data-icon="minus" onclick="minusOrderProduct(this);"> </i>
+                                    <input type="number" disabled="" value="1" min="1" max="100">
+                                    <i class="iconsax icon add" data-icon="add" onclick="plusOrderProduct(this);"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- sort offcanvas start -->
     <div class="offcanvas offcanvas-bottom filter-offcanvas" tabindex="-1" id="sort">
@@ -531,10 +595,62 @@
             </section>
         </div>
         <div class="offcanvas-foorter d-flex align-items-center gap-3 shadow-none">
-            <a href="#" data-bs-dismiss="offcanvas" class="btn white-btn w-50">Cancel</a>
-            <a href="#" data-bs-dismiss="offcanvas" class="btn theme-btn w-50">Delate</a>
+            <a href="cart.html" data-bs-dismiss="offcanvas" class="btn btn-small white-btn w-50 add-icon">
+                Qaytish
+            </a>
+            <a href="#" data-bs-dismiss="offcanvas" class="btn theme-btn d-flex align-items-center justify-content-center w-50">
+                <i class="iconsax" data-icon="add" style="--iconsax-Color: rgba(var(--title-color), 1);--iconsax-Size: 22px;"></i>
+                Qo'shish
+            </a>
         </div>
+        <!-- <div class="fixed-btn-grp">
+            <div class="custom-container">
+                <div class=" d-flex align-items-center gap-3 w-100 m-0">
+                    <a href="cart.html" class="btn btn-small white-btn w-50">
+                        <i class="iconsax me-1" data-icon="add"> </i>
+                        Add to Cart
+                    </a>
+                    <a href="checkout.html" class="btn btn-small theme-btn buy-btn w-50"><i class="iconsax me-2" data-icon="shopping-cart"> </i>Buy Now
+                    </a>
+                </div>
+            </div>
+        </div> -->
     </div>
+
+    <!-- bottom panel start -->
+    <ul class="bottom-menu only-icon">
+        <li>
+            <a href="home.html">
+                <i class="iconsax text-content" data-icon="home-2"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="category.html">
+                <i class="iconsax text-content" data-icon="grid-apps-equals"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="cart.html">
+                <i class="iconsax text-content" data-icon="shopping-cart"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="wishlist.html">
+                <i class="iconsax text-content" data-icon="heart"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="account.html">
+                <i class="iconsax text-content" data-icon="user-2"></i>
+            </a>
+        </li>
+    </ul>
+    <!-- bottom panel end -->
+
 
 
     <!-- bootstrap js -->
@@ -575,6 +691,23 @@
                         filterCheckAll.forEach(ch => ch.checked = true);
                     }
                 }
+            }
+        }
+
+        function productMenuStyle(currentIcon){
+            let grid_section = document.querySelector('.grid-section-js');
+            let vertical_section = document.querySelector('.vertical-section-js');
+            let imageIcon = currentIcon.querySelector('img');
+            if (imageIcon.getAttribute('data-section') === 'grid') {
+                imageIcon.src = "{% static '' %}main/assets/images/svg/menu.png";
+                imageIcon.setAttribute('data-section', 'vertical');
+                grid_section.classList.add('d-none');
+                vertical_section.classList.remove('d-none');
+            } else {
+                imageIcon.src = "{% static '' %}main/assets/images/svg/visualization.png";
+                imageIcon.setAttribute('data-section', 'grid');
+                grid_section.classList.remove('d-none');
+                vertical_section.classList.add('d-none');
             }
         }
     </script>

@@ -168,12 +168,12 @@ if (typeof TemplateCustomizer !== 'undefined') {
           {% csrf_token %}
           <div class="mb-6">
             <label for="email" class="form-label">Email or Username</label>
-            <input type="email" class="form-control" id="email" name="email-username" value="{{username}}" placeholder="Email/Username" autofocus>
+            <input type="email" class="form-control" id="email" name="email-username" required value="{{username}}" placeholder="Email/Username" autofocus>
           </div>
           <div class="mb-6 form-password-toggle">
             <label class="form-label" for="password">Password</label>
             <div class="input-group input-group-merge">
-              <input type="password" id="password" class="form-control" name="password" value="{{password}}" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password">
+              <input type="password" id="password" class="form-control" minlength="8" required name="password" value="{{password}}" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password">
               <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
             </div>
           </div>
@@ -185,7 +185,7 @@ if (typeof TemplateCustomizer !== 'undefined') {
                   Remember Me {{error}}
                 </label>
               </div>
-              <a href="{% static "" %}admin_statics/forgot_password/index.htm">
+              <a href="{% url "forgot-password" %}">
                 <p class="mb-0">Forgot Password?</p>
               </a>
             </div>

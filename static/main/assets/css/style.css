@@ -5066,8 +5066,7 @@ body:has(.tab-to-top-box[style="transform: scale(1);"]) .tab-to-top-box {
     .product-box.vertical-product .product-img {
       position: unset;
       padding: 12px;
-      width: 100px;
-      height: 100px;
+      width: 50%;
       background-color: rgba(var(--box-bg), 1);
       border-right: 1px solid rgba(var(--border-color), 0.6);
       border-radius: 10px 0 0 10px; }
@@ -5089,6 +5088,11 @@ body:has(.tab-to-top-box[style="transform: scale(1);"]) .tab-to-top-box {
         border-radius: 999px; /* Pill shape */
         padding: 5px 10px;
         background-color: #fff;
+    }
+
+    .product-content .plmn-vertical {
+        margin-bottom: -8px !important;
+        margin-right: -10px !important;
     }
     
     .product-content .plus-minus i {

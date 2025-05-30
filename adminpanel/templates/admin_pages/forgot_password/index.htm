@@ -1,8 +1,8 @@
 ﻿
 
 <!DOCTYPE html>
-
-<html lang="en" class="light-style layout-navbar-fixed  layout-menu-fixed   customizer-hide layout-wide" dir="ltr" data-theme="theme-default" data-assets-path="/vuexy-html-django-admin-template/demo-1/static/" data-base-url="" data-framework="django" data-template="vertical-menu--theme-default-light">
+{% load static %} 
+<html lang="en" class="light-style layout-navbar-fixed  layout-menu-fixed   customizer-hide layout-wide" dir="ltr" data-theme="theme-default" data-assets-path="{% static "" %}admin_statics/static/" data-base-url="" data-framework="django" data-template="vertical-menu--theme-default-light">
 
   <head>
     <!-- Removed by WebCopy --><!--<base href="/vuexy-html-django-admin-template/demo-1/">--><!-- Removed by WebCopy -->
@@ -14,7 +14,7 @@
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://1.envato.market/vuexy_admin">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "" %}admin_statics/static/img/favicon/favicon.ico">
 
     <!-- Include the styles partial -->
     
@@ -25,34 +25,34 @@
 <link href="../../../css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap" rel="stylesheet">
 
 <!-- Icons -->
-<link rel="stylesheet" href="../static/vendor/fonts/tabler-icons.css">
-<link rel="stylesheet" href="../static/vendor/fonts/fontawesome.css">
-<link rel="stylesheet" href="../static/vendor/fonts/flag-icons.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/fonts/tabler-icons.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/fonts/fontawesome.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/fonts/flag-icons.css">
 
 <!--Core CSS -->
 
-<link rel="stylesheet" href="../static/vendor/css/rtl/core.css" class="template-customizer-core-css">
-<link rel="stylesheet" href="../static/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/css/rtl/core.css" class="template-customizer-core-css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css">
 
 
 
-<link rel="stylesheet" href="../static/css/demo.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/css/demo.css">
 
 <!--Vendor CSS-->
-<link rel="stylesheet" href="../static/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
-<link rel="stylesheet" href="../static/vendor/libs/typeahead-js/typeahead.css">
-<link rel="stylesheet" href="../static/vendor/libs/node-waves/node-waves.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/libs/typeahead-js/typeahead.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/libs/node-waves/node-waves.css">
 
 
     
 
-<link rel="stylesheet" href="../static/vendor/libs/%40form-validation/form-validation.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/libs/%40form-validation/form-validation.css">
 
 
     <!--Page CSS-->
     
 
-<link rel="stylesheet" href="../static/vendor/css/pages/page-auth.css">
+<link rel="stylesheet" href="{% static "" %}admin_statics/static/vendor/css/pages/page-auth.css">
 
 
 
@@ -61,13 +61,13 @@
 
 <!-- Helpers -->
 <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-<script src="../static/vendor/js/helpers.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/js/helpers.js"></script>
 <!--? Template customizer: To hide customizer set display_customizer value false in config.js.  -->
 
-<script src="../static/vendor/js/template-customizer.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/js/template-customizer.js"></script>
 
 <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-<script src="../static/js/config.js"></script>
+<script src="{% static "" %}admin_statics/static/js/config.js"></script>
 <!-- beautify ignore:start -->
 
 <script>
@@ -82,17 +82,17 @@ if (typeof TemplateCustomizer !== 'undefined') {
     pathResolver: function(path) {
       var resolvedPaths = {
         // Core stylesheets
-        'core.css': "/vuexy-html-django-admin-template/demo-1/static/vendor/css/rtl/core.css",
-        'core-dark.css': "/vuexy-html-django-admin-template/demo-1/static/vendor/css/rtl/core-dark.css",
+        'core.css': "{% static "" %}admin_statics/static/vendor/css/rtl/core.css",
+        'core-dark.css': "{% static "" %}admin_statics/static/vendor/css/rtl/core-dark.css",
 
-        'theme-default.css': "/vuexy-html-django-admin-template/demo-1/static/vendor/css/rtl/theme-default.css",
-        'theme-default-dark.css': "/vuexy-html-django-admin-template/demo-1/static/vendor/css/rtl/theme-default-dark.css",
+        'theme-default.css': "{% static "" %}admin_statics/static/vendor/css/rtl/theme-default.css",
+        'theme-default-dark.css': "{% static "" %}admin_statics/static/vendor/css/rtl/theme-default-dark.css",
 
-        'theme-bordered.css': "/vuexy-html-django-admin-template/demo-1/static/vendor/css/rtl/theme-bordered.css",
-        'theme-bordered-dark.css': "/vuexy-html-django-admin-template/demo-1/static/vendor/css/rtl/theme-bordered-dark.css",
+        'theme-bordered.css': "{% static "" %}admin_statics/static/vendor/css/rtl/theme-bordered.css",
+        'theme-bordered-dark.css': "{% static "" %}admin_statics/static/vendor/css/rtl/theme-bordered-dark.css",
 
-        'theme-semi-dark.css': "/vuexy-html-django-admin-template/demo-1/static/vendor/css/rtl/theme-semi-dark.css",
-        'theme-semi-dark-dark.css': "/vuexy-html-django-admin-template/demo-1/static/vendor/css/rtl/theme-semi-dark-dark.css"
+        'theme-semi-dark.css': "{% static "" %}admin_statics/static/vendor/css/rtl/theme-semi-dark.css",
+        'theme-semi-dark-dark.css': "{% static "" %}admin_statics/static/vendor/css/rtl/theme-semi-dark-dark.css"
 
       }
       return resolvedPaths[path] || path;
@@ -142,9 +142,9 @@ if (typeof TemplateCustomizer !== 'undefined') {
     <!-- /Left Text -->
     <div class="d-none d-lg-flex col-lg-8 p-0">
       <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center">
-        <img src="../static/img/illustrations/auth-forgot-password-illustration-light.png" alt="auth-forgot-password-cover" class="my-5 auth-illustration d-lg-block d-none" data-app-light-img="illustrations/auth-forgot-password-illustration-light.png" data-app-dark-img="illustrations/auth-forgot-password-illustration-dark.png">
+        <img src="{% static "" %}admin_statics/static/img/illustrations/auth-forgot-password-illustration-light.png" alt="auth-forgot-password-cover" class="my-5 auth-illustration d-lg-block d-none" data-app-light-img="illustrations/auth-forgot-password-illustration-light.png" data-app-dark-img="illustrations/auth-forgot-password-illustration-dark.png">
 
-        <img src="../static/img/illustrations/bg-shape-image-light.png" alt="auth-forgot-password-cover" class="platform-bg" data-app-light-img="illustrations/bg-shape-image-light.png" data-app-dark-img="illustrations/bg-shape-image-dark.png">
+        <img src="{% static "" %}admin_statics/static/img/illustrations/bg-shape-image-light.png" alt="auth-forgot-password-cover" class="platform-bg" data-app-light-img="illustrations/bg-shape-image-light.png" data-app-dark-img="illustrations/bg-shape-image-dark.png">
       </div>
     </div>
     <!-- /Left Text -->
@@ -155,8 +155,8 @@ if (typeof TemplateCustomizer !== 'undefined') {
         <h4 class="mb-1">Forgot Password? 🔒</h4>
         <p class="mb-6">Enter your email and we'll send you instructions to reset your password</p>
          
-        <form id="formAuthentication" class="mb-6" action="/vuexy-html-django-admin-template/demo-1/forgot_password/" method="post">
-           <input type="hidden" name="csrfmiddlewaretoken" value="CWjWSXpjhZdaL66UyxKrJdqsAmNjBi2gy9uXlxAWK3HsrUb4P8vN7HmaDiE5A57H">
+        <form id="formAuthentication" class="mb-6"  method="post">
+          {% csrf_token %}
           <div class="mb-6">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" autofocus>
@@ -167,7 +167,7 @@ if (typeof TemplateCustomizer !== 'undefined') {
           </button>
         </form>
         <div class="text-center">
-          <a href="../login/index-1.htm" class="d-flex align-items-center justify-content-center">
+          <a href="{% url "admin-dashboard" %}" class="d-flex align-items-center justify-content-center">
             <i class="ti ti-chevron-left scaleX-n1-rtl me-1_5"></i>
             Back to login
           </a>
@@ -185,29 +185,29 @@ if (typeof TemplateCustomizer !== 'undefined') {
     
 
 <!--Core Javascript-->
-<script src="../static/vendor/libs/jquery/jquery.js"></script>
-<script src="../static/vendor/libs/popper/popper.js"></script>
-<script src="../static/vendor/js/bootstrap.js"></script>
-<script src="../static/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-<script src="../static/vendor/libs/node-waves/node-waves.js"></script>
-<script src="../static/vendor/libs/hammer/hammer.js"></script>
-<script src="../static/vendor/libs/typeahead-js/typeahead.js"></script>
-<script src="../static/vendor/js/menu.js"></script>
-<script src="../static/js/main.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/jquery/jquery.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/popper/popper.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/js/bootstrap.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/node-waves/node-waves.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/hammer/hammer.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/typeahead-js/typeahead.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/js/menu.js"></script>
+<script src="{% static "" %}admin_statics/static/js/main.js"></script>
 
 
     <!--Vendors Javascript-->
     
  
-<script src="../static/vendor/libs/%40form-validation/popular.js"></script>
-<script src="../static/vendor/libs/%40form-validation/bootstrap5.js"></script>
-<script src="../static/vendor/libs/%40form-validation/auto-focus.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/%40form-validation/popular.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/%40form-validation/bootstrap5.js"></script>
+<script src="{% static "" %}admin_statics/static/vendor/libs/%40form-validation/auto-focus.js"></script>
 
 
     <!--Page Javascript-->
     
  
-<script src="../static/js/pages-auth.js"></script>
+<script src="{% static "" %}admin_statics/static/js/pages-auth.js"></script>
 
 
   </body>
