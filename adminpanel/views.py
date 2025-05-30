@@ -20,9 +20,9 @@ def admin_login(request):
                 
             return redirect('admin-dashboard')
         else:
-            return render(request, 'admin_pages\login\index.htm', {'error': 'Login xato', 'username': username, 'password': password})
+            return render(request, 'admin_pages/login/index.htm', {'error': 'Login xato', 'username': username, 'password': password})
 
-    return render(request, 'admin_pages\login\index.htm')
+    return render(request, 'admin_pages/login/index.htm')
 
 
 
@@ -46,9 +46,9 @@ def admin_login(request):
         username = request.POST['username']
         password = request.POST['password'] 
         if username == 'admin' and password == 'admin':
-                return render(request, 'admin_pages\login\index.htm')
-    return render(request, 'admin_pages\login\index.htm')
+                return render(request, 'admin_pages/login/index.htm')
+    return render(request, 'admin_pages/login/index.htm')
 
 def adminpanel(request):
-        return render(request, 'admin_pages\login\index.htm')
+        return render(request, 'admin_pages/login/index.htm')
 '''
