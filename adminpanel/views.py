@@ -10,21 +10,23 @@ def admin_login(request):
         remember= request.POST.get('remember')
         print(remember,' remember')
         user = authenticate(request, username=username, password=password)
-        if not user.is_authenticated:
-            if user is not None:
-                login(request, user)
-                if remember :
-                    request.session.set_expiry(1209600)
-                    # admin 1->8
+        
+        if user is not None:
+            login(request, user)
+            if remember :
+                request.session.set_expiry(1209600)
+                # admin 1->8
 
-                else:
-                    request.session.set_expiry(0)
-                    
-                return redirect('admin-dashboard')
             else:
-                return render(request, 'admin_pages/login/index.htm', {'error': 'Login xato', 'username': username, 'password': password})
-        else:
+                request.session.set_expiry(0)
+                
             return redirect('admin-dashboard')
+        else:
+            return render(request, 'admin_pages/login/index.htm', {'error': 'Login xato', 'username': username, 'password': password})
+    
+    
+    if request.user.is_authenticated:
+        return redirect('admin-dashboard')
     return render(request, 'admin_pages/login/index.htm')
 
 
@@ -36,9 +38,14 @@ def admin_dashboard(request):
 @login_required(login_url='/admin/login/')
 def admin_logout(request):
     logout(request)
-    return redirect('admin-logout')
+    return redirect('admin-login')
+@login_required(login_url='/admin/login/')
+def admin_settings(request):
+    return render(request, 'dashboard_pages\html/vertical-menu-template\pages-account-settings-account.html')
 
-
+@login_required(login_url='/admin/login/')
+def admin_profile(request):
+    return render(request, 'dashboard_pages\html/vertical-menu-template/pages-profile-user.html')
 # Create your views here.
 '''
 from django.shortcuts import render
