@@ -10,19 +10,21 @@ def admin_login(request):
         remember= request.POST.get('remember')
         print(remember,' remember')
         user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            if remember :
-                request.session.set_expiry(1209600)
-                # admin 1->8
+        if not user.is_authenticated:
+            if user is not None:
+                login(request, user)
+                if remember :
+                    request.session.set_expiry(1209600)
+                    # admin 1->8
 
+                else:
+                    request.session.set_expiry(0)
+                    
+                return redirect('admin-dashboard')
             else:
-                request.session.set_expiry(0)
-                
-            return redirect('admin-dashboard')
+                return render(request, 'admin_pages/login/index.htm', {'error': 'Login xato', 'username': username, 'password': password})
         else:
-            return render(request, 'admin_pages/login/index.htm', {'error': 'Login xato', 'username': username, 'password': password})
-
+            return redirect('admin-dashboard')
     return render(request, 'admin_pages/login/index.htm')
 
 
