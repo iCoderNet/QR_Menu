@@ -29,7 +29,7 @@ def admin_login(request):
 
 @login_required(login_url='/admin/login/')
 def admin_dashboard(request):
-    return HttpResponse('Admin Dashboard')
+    return render(request, 'dashboard_pages\html/vertical-menu-template\index.html')
     # return render(request, 'admin_dashboard.html')
 @login_required(login_url='/admin/login/')
 def admin_logout(request):

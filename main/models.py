@@ -7,8 +7,19 @@ class User(AbstractUser):
     ROLE_CHOICES = (
         ('admin', 'Admin'),
         ('owner', 'Owner'),
+        ('user', 'User'),
     )
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='owner')
+    langguages=(
+        ('uz', 'Uzbek'),
+        ('ru', 'Russian'),
+        ('en', 'English'),
+        )
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='user')
+    full_name=models.CharField(max_length=255)
+    lang=models.CharField(max_length=20, choices=langguages, default='uz')
+    phonenumber=models.CharField(max_length=20, null=False, blank=False)
+    last_seen=models.DateTimeField(auto_now_add=True)
+    
 
 
 class Restaurant(models.Model):
