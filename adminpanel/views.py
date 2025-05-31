@@ -22,7 +22,7 @@ def admin_login(request):
                 
             return redirect('admin-dashboard')
         else:
-            return render(request, 'admin_pages/login/index.htm', {'error': 'Login xato', 'username': username, 'password': password})
+            return render(request, 'admin_pages/login/index.htm', {'error': 'Login yoki parol xato', 'username': username, 'password': password, 'remember': remember})
     
     
     if request.user.is_authenticated:
