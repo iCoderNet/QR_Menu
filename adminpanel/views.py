@@ -14,6 +14,7 @@ def admin_login(request):
             login(request, user)
             if remember :
                 request.session.set_expiry(1209600)
+                # admin 1->8
 
             else:
                 request.session.set_expiry(0)
