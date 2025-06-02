@@ -44,6 +44,14 @@ def admin_settings(request):
     return render(request, 'dashboard_pages\html/vertical-menu-template\pages-account-settings-account.html')
 
 @login_required(login_url='/admin/login/')
+def dashboard_ecommerce(request):
+    return render(request, 'dashboard_pages\html/vertical-menu-template/app-ecommerce-dashboard.html')
+
+@login_required(login_url='/admin/login/')
+def add_product(request):
+    return render(request, 'dashboard_pages\html/vertical-menu-template/app-ecommerce-product-add.html')    
+
+@login_required(login_url='/admin/login/')
 def admin_profile(request):
     return render(request, 'dashboard_pages\html/vertical-menu-template/pages-profile-user.html')
 # Create your views here.
